@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Berry Gloss & Co.</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-berry: #4A1525;
+            --secondary-rose: #9E4B5E;
+            --bg-blush: #F8E1E7;
+            --accent-gold: #C5A059;
+            --text-dark: #2B1B17;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-blush);
+            color: var(--text-dark);
+        }
+
+        /* Top Header Navigation */
+        nav {
+            background-color: var(--primary-berry);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* About Main Container */
+        .about-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .about-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .about-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--primary-berry);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .title-divider {
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 0 auto 40px;
+        }
+
+        /* Two-Column Story Section */
+        .story-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .story-img-box { 
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+        }
+
+        .story-img-box img  {
+            width: 100%;
+            max-width: 400px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 8px 20px rgba(74, 21, 37, 0.12);
+        }
+
+        .story-details {
+            flex: 1.2;
+            min-width: 280px;
+        }
+
+        .story-details p {
+            color: #4a4a4a;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* Mission & Vision Rows */
+        .mv-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .mv-item i {
+            color: var(--accent-gold);
+            font-size: 24px;
+            margin-top: 2px;
+        }
+
+        .mv-item h4 {
+            color: var(--primary-berry);
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .mv-item p, .mv-item ul {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .mv-item ul {
+            padding-left: 18px;
+        }
+
+        /* Value Badges Grid (Bahagian Bawah) */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            text-align: center;
+            border-top: 1px solid rgba(197, 160, 89, 0.4);
+            padding-top: 35px;
+            margin-top: 20px;
+        }
+
+        .value-box {
+            padding: 10px;
+        }
+
+        .value-box i {
+            font-size: 28px;
+            color: var(--primary-berry);
+            margin-bottom: 10px;
+        }
+
+        .value-box h5 {
+            color: var(--primary-berry);
+            font-size: 12px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .story-grid {
+                flex-direction: column;
+            }
+            .about-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <nav>
+        <div class="logo">Berry Gloss & Co.</div>
+        <ul>
+            <li><a href="index.html"><i class="fa-solid fa-house" style="color: var(--accent-gold);"></i> HOME</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-circle-info" style="color: var(--accent-gold);"></i> ABOUT US</a></li>
+            <li><a href="index.html#shop"><i class="fa-solid fa-bag-shopping" style="color: var(--accent-gold);"></i> SHOP</a></li>
+            <li><a href="https://wa.me/6011XXXXXXXX?text=Hai%20Berry%20Gloss,%20saya%20nak%20tanya%20pasal%20produk!" target="_blank"><i class="fa-solid fa-headset" style="color: var(--accent-gold);"></i> CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN ABOUT US CONTENT -->
+    <div class="about-container">
+        <div class="about-card">
+            
+            <h1 class="about-title">OUR STORY</h1>
+            <div class="title-divider"></div>
+
+            <div class="story-grid">
+                <!-- GAMBAR BRANDING -->
+                <div class="story-img-box">
+                    <img src="brand.JPEG." alt="Berry Gloss & Co. Story">
+                </div>
+
+                <!-- PENERANGAN, MISI & VISI -->
+                <div class="story-details">
+                    <p>
+                        <strong>Berry Gloss & Co.</strong> was established with a passion for creating premium-quality, handcrafted press-on nails that bring effortless elegance to every woman. We carefully curate high-quality materials to ensure every set is durable, reusable, and beautifully designed to deliver salon-grade perfection right at home.
+                    </p>
+
+                    <!-- OUR MISSION -->
+                    <div class="mv-item">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <div>
+                            <h4>OUR MISSION</h4>
+                            <ul>
+                                <li>To provide premium-quality press-on nails with a salon finish.</li>
+                                <li>To offer trendy, customisable designs for every occasion.</li>
+                                <li>To deliver great value at affordable and reasonable prices.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- OUR VISION -->
+                    <div class="mv-item">
+                        <i class="fa-solid fa-eye"></i>
+                        <div>
+                            <h4>OUR VISION</h4>
+                            <p>
+                                To become Malaysia's leading and most trusted handcrafted press-on nail brand for modern women.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- VALUE BADGES (IKON DI BAHAGIAN BAWAH) -->
+            <div class="values-grid">
+                <div class="value-box">
+                    <i class="fa-solid fa-gem"></i>
+                    <h5>PREMIUM QUALITY</h5>
+                </div>
+
+                <div class="value-box">
+                    <i class="fa-solid fa-face-smile"></i>
+                    <h5>100% SATISFACTION</h5>
+                </div>
+
+                <div class="value-box">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                    <h5>REUSABLE & EASY</h5>
+                </div>
+
+                <div class="value-box">
+                    <i class="fa-solid fa-heart"></i>
+                    <h5>HANDMADE WITH LOVE</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="background-color: var(--primary-berry); color: var(--white); text-align: center; padding: 30px 20px; margin-top: 60px; border-top: 3px solid var(--accent-gold);">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 8px;">Berry Gloss & Co.</h3>
+        <p style="font-size: 13px; color: var(--bg-blush); margin-bottom: 15px;">Luxe Handmade Press-On Nails ✨</p>
+        <p style="font-size: 11px; color: rgba(255,255,255,0.6);">&copy; 2026 Berry Gloss & Co. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html> 
